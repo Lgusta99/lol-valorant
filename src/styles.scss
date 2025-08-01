@@ -1,1 +1,8 @@
+@import "tailwindcss";
 @import "scss";
+
+body {
+  @apply bg-[var(--background-primary)] text-[var(--text-primary)];
+
+  font-family: "Space Grotesk", "Noto Sans", sans-serif;
+}
