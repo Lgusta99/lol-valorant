@@ -1,9 +1,9 @@
 import { Routes } from '@angular/router';
-import { Home } from './modules/lol-page/pages/home/home';
+import { Lol } from './modules/lol-page/pages/lol/lol';
 
 export const routes: Routes = [
     {
         path: '',
-        component:Home,
+        component:Lol,
     }
 ];
