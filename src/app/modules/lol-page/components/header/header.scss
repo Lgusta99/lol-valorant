@@ -1,0 +1,46 @@
+:host{
+    &::before{
+        content: "";
+        display: flex;
+        width: 100%;
+        height: 50px;
+        margin-bottom: -65px;
+        background: var(--primary)
+    }
+
+    header{
+        display: flex;
+        align-items: center;
+    }
+
+    aside{
+        p{
+            text-align: center;
+        }
+
+        nav ul, section {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+        nav{
+            margin: 20px 0 ;
+
+            ul{
+                li{
+                    a {
+                        width: 250px;
+                    }
+                }
+            }
+        }
+    }
+    
+    header-buttons{
+    display: flex;  
+    margin: 20px;
+    }
+}
