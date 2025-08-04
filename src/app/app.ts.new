@@ -1,0 +1,83 @@
+import { Component, signal, OnInit } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Header } from './modules/lol-page/components/header/header';
+import { SideBar } from './modules/lol-page/components/side-bar/side-bar';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+interface Champion {
+  version: string;
+  id: string;
+  key: string;
+  name: string;
+  title: string;
+  blurb: string;
+  info: {
+    attack: number;
+    defense: number;
+    magic: number;
+    difficulty: number;
+  };
+  image: {
+    full: string;
+    sprite: string;
+    group: string;
+    x: number;
+    y: number;
+    w: number;
+    h: number;
+  };
+  tags: string[];
+  partype: string;
+  stats: {
+    [key: string]: number;
+  };
+}
+
+interface ChampionResponse {
+  type: string;
+  format: string;
+  version: string;
+  data: {
+    [key: string]: Champion;
+  };
+}
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [RouterOutlet, Header, HttpClientModule, SideBar],
+  template: `
+    <app-header></app-header>
+    <div class="main-container">
+      <app-side-bar [champions]="data?.data"></app-side-bar>
+      <router-outlet></router-outlet>
+    </div>
+  `,
+  styles: [`
+    .main-container {
+      display: flex;
+      height: calc(100vh - 64px);
+    }
+  `]
+})
+export class App implements OnInit {
+  protected readonly title = signal('lol-music');
+  
+  data: ChampionResponse | null = null;
+
+  url = 'https://ddragon.leagueoflegends.com/cdn/15.15.1/data/en_US/champion.json';
+
+  constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    this.http.get<ChampionResponse>(this.url).subscribe({
+      next: (response) => {
+        this.data = response;
+        console.log('Dados recebidos:', this.data);
+      },
+      error: (error) => {
+        console.error('Erro ao buscar dados:', error);
+      }
+    });
+  }
+}

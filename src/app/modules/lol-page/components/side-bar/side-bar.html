@@ -6,45 +6,13 @@
           <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
         </svg>
       </div>
-      <input class="side-bar__search__container__input" placeholder="Search champions" type="search"/>
+      <input class="side-bar__search__container__input" placeholder="Search champions" type="search" [(ngModel)]="searchText" (input)="filterChampions()"/>
     </div>
   </div>
   <nav class="side-bar__items">
-    <a class="side-bar__items__item" href="#">
-      <div class="side-bar__items__item__icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB_HQ4byb6HPRTB9vRzq1JstxaijQnuDGBUnD21lekvuv6-DExToKBmbus8GqmYVa1hyVsEQevmKTu8WwmsNVENLKDxumZvv5f_hIVLL1UoHfDPMcZenU5owegTgcil80nZb7FsjyA_0WJQjOsf639cATxadUBZKalzFWUSE4p97_DaPDl4T7UbXQvo_Y_SjALpIPia2PrrdsVhhnkFaNBhKjmqFznGOC4uYF3Jnfc1ENEf9CPzpl9rX26gf625b4IBNylZahHg1p_2");'></div>
-      <span class="side-bar__items__item__label">Alistair</span>
-    </a>
-    <a class="side-bar__items__item" href="#">
-      <div class="side-bar__items__item__icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCQGdUREWBRNz0sw-apb0I0UuWBKeAPCXKlUr9K6lpoh8GA3bBvq_A-4ewMbY8x1bZQ_2uQytkhw68R2P4WbPfFykSU0GZCigoiTSBPBCNFPZC_5by9ra7ltBWlvT-C4n3pcKtmWSn_3jgVKqlAvcxg7PSE6mn61-fuQSH7SPFgvoivYQOGtKgPy1rOLnIajWCH4Yx6GOLp-IS4yE4u4ZmwaJ4HnZsXjgGNwAVyExqEllZkekLWEjeoCgILtowyuiAleU649GfiwLm3");'></div>
-      <span class="side-bar__items__item__label">Annie</span>
-    </a>
-    <a class="side-bar__items__item" href="#">
-      <div class="side-bar__items__item__icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCUAKq7xJ711Q_3IjoXkR3oxGK1zaZeaJnmXWZ-UiFgsSXftyNhxmes3r-Pf3W5ZIAhVmh_TVY6wOGJDleO337MagJDVUSvP3tc2Ljxr5BXcFBpjRmtwJ3x3HaRkR8grWoSMWEvE9--9S_ZNLBN3lbJlQ5AwUHTcCvURG5JF8nj_J-p3uVlNQRvQXJK_o3LdyP5Ysj3q0g2PgHpmDQmpYt4E_msfQXzdKCOmRF0ehFFWkcIhgI6qhAUoNS1SWNn1Z8vbJwTMTceh-Vb");'></div>
-      <span class="side-bar__items__item__label">Ashe</span>
-    </a>
-    <a class="side-bar__items__item" href="#">
-      <div class="side-bar__items__item__icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAjO7wqpiKFg5mvZ2XZdswJl_hXxk8GYA2kODTqW0rLQTuVKvRxer50hs4twEpjwJM_dC3B6Lc8xch6GP6hT-yvv0kYYJ3Z3HtHEtJNFt9rX8fIwOrN_FHYtr-L_CGXexN_scBAr3652J2JGUlInCSfaEIsVHy6GihrNWztuPZzsewCLUi7Co2YU_X6PVk45SWZ4tuKjYRVGc3ZROh6Wf08u0cCjChSQB-vVJA3k8-w5uas2orsrnoQtnD6vIk961y8gB8L5-vnW4G3");'></div>
-      <span class="side-bar__items__item__label">Blitzcrank</span>
-    </a>
-    <a class="side-bar__items__item" href="#">
-      <div class="side-bar__items__item__icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA_w1COvLoThhpqaLs9UDRbjrL928qkW0YXttGwTCnU7A4YaRH-5sNDIpEujcLfIDfqPEVHSdlP8USeTzlYy7wGL9HR10D-UxGd1YB5l2t9XiB3YM5m_wQmUS4W6EATDJi4y2Mxeh_ksiosa7TEKYRjsBBuRZX1MKsMXv38HeWOnFaac0rUyU3AW2ht5gSeR-RF-FLWBPDEwaEWp-VfawLJ1gFqv0W1oDmyIRCk70htdCPmgrQRn2JFhJULWbu4-uyq2DVhaAlKSOnL");'></div>
-      <span class="side-bar__items__item__label">Caitlyn</span>
-    </a>
-    <a class="side-bar__items__item" href="#">
-      <div class="side-bar__items__item__icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCTgn1KDySsDXmyCGj9jdC1AKXy8oYOMoI7y_5fa7aHE2S8uCANSqZPeriaIV4yNw5YD9shhd6kXjuDcNqhxyeuZEjUNjrydkQedcZrkigneJxr60iebA6eWBvAc9jxM4Q51-aFq-rYvbl5iFmLtMo4C0HssaTFi0PTqxfwEmXGIBjawuLLcdnMQ_fbZvPo8VT9mzEHZjBeOc1y8PogDFLrT59o8VIQpSdn3C4TjYk5viz-ZGE20LKJFquymr9K4ZcqVbKuKX7Ug82a");'></div>
-      <span class="side-bar__items__item__label">Darius</span>
-    </a>
-    <a class="side-bar__items__item" href="#">
-      <div class="side-bar__items__item__icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAnxN4TMrJ1yN04KlELpoGlkkZ74zxXDjMpXlYG6xzbyUJv6_B6_wwUinbyLFrENJ2F1kRzIBM604Ti7xMojXolIzrukdO3QEJAApp4MnoE0LJyML_jkq4H0MLvl3GM2TftdwJ-05H2qym-JHZdkrt0NZj7LY2efaJd14O-t1-l-HUAvE4VOCj-IFApSYdc818GHeR_4aF4-GU4uV2aiN-hFJelabY35CCS5p1aB6AXedpltTeLHsy4AZMKNQLA7K8Eo_AHjV_pUUCn");'></div>
-      <span class="side-bar__items__item__label">Ezreal</span>
-    </a>
-    <a class="side-bar__items__item" href="#">
-      <div class="side-bar__items__item__icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCaBlAj1O3ado-X6ff4vtKe7nBua5j0U-WgxPeGWpp8nYTMlywJzsFWSVCiH1ZvbDfhANSt7S9_mGKaAPtOW1VpyAjSBLnQkE7PusyH9E686k-MZsggA5YVvNkdEAY7xUuU5kERU6oThhURyCAm0FEKOG51OIvEecAkI-PYxJ6CI-06ukEOxgBa9aIPzEDWiyadxSOCMWXYay2UqmjlOg5KK2lpxTvDoiO3eNhF5gXexL_hyh1Z6B2VHCiHsqSlnwH0VP2rJgGaIK-Y");'></div>
-      <span class="side-bar__items__item__label">Fiora</span>
-    </a>
-    <a class="side-bar__items__item" href="#">
-      <div class="side-bar__items__item__icon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDREGni6RxP8GT_r6M2gZxTvgjx6VHa5kcaQ60zgW37-rtH1Pq73muCzm5c0lLNtA5Qtvy2hTTKwkSfOIszHTb_GfxptoLGvQTL2JP7CAPXTr7nWReEMKAGR8nHf2un7t2LKDsk8UlXqpO8QqlGD3ZiXqCMgSEapfs7JIuaBE6QTxtAR8627ICgoZqDI6U4tl8TxFKYlekslrVhx6QYjbQ2hY5aVuihA5WbVQDSs3V5T4Dj7j4gLFPhQ-kJPW-57SrL7MyH310Rx2SU");'></div>
-      <span class="side-bar__items__item__label">Garen</span>
+    <a *ngFor="let champion of filteredChampions" class="side-bar__items__item" [routerLink]="['/champion', champion.id]">
+      <div class="side-bar__items__item__icon" [style.background-image]="'url(' + getChampionImageUrl(champion.image.full) + ')'"></div>
+      <span class="side-bar__items__item__label">{{ champion.name }}</span>
     </a>
   </nav>
 </aside>

@@ -9,6 +9,4 @@ import { CenterPage } from '../../components/center-page/center-page';
   templateUrl: './lol.html',
   styleUrl: './lol.scss'
 })
-export class Lol {
-
-}
+export class Lol {}

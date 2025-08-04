@@ -1,0 +1,115 @@
+{
+  "champions": {
+    "aatrox": {
+      "id": "aatrox",
+      "name": "Aatrox",
+      "title": "A Lâmina Darkin",
+      "roles": ["Fighter", "Tank"],
+      "difficulty": 3,
+      "lore": "Antes defensores honrados de Shurima contra o Vazio, Aatrox e seus irmãos tornaram-se uma ameaça ainda maior para Runeterra, e foram derrotados apenas por artimanhas mortais dos magos mortais.",
+      "abilities": {
+        "passive": {
+          "name": "Postura do Ceifador Darkin",
+          "description": "Periodicamente, os ataques básicos de Aatrox causam Dano Físico adicional e o curam"
+        },
+        "q": {
+          "name": "A Espada Darkin",
+          "description": "Aatrox golpeia a área com sua espada gigante, causando dano físico"
+        },
+        "w": {
+          "name": "Correntes Infernais",
+          "description": "Aatrox lança correntes, ralentando o primeiro inimigo atingido"
+        },
+        "e": {
+          "name": "Avanço Umbral",
+          "description": "Passivamente, Aatrox cura-se ao causar dano a campeões. Quando ativada, ele avança em uma direção"
+        },
+        "r": {
+          "name": "Aniquilador de Mundos",
+          "description": "Aatrox libera sua forma demoníaca, ganhando Dano de Ataque, cura aumentada e Velocidade de Movimento"
+        }
+      },
+      "skins": [
+        {
+          "id": "aatrox_0",
+          "name": "Padrão",
+          "imageUrl": "https://example.com/aatrox_default.jpg"
+        }
+      ]
+    },
+    "alistar": {
+      "id": "alistar",
+      "name": "Alistar",
+      "title": "O Minotauro",
+      "roles": ["Tank", "Support"],
+      "difficulty": 2,
+      "lore": "Um poderoso guerreiro com uma reputação temível, Alistar busca vingança contra o império Noxiano pela destruição de sua tribo. Embora ele tenha sido escravizado e forçado a lutar nas arenas de gladiadores, sua vontade indomável permitiu que ele sobrevivesse e eventualmente escapasse.",
+      "abilities": {
+        "passive": {
+          "name": "Pisotear",
+          "description": "Ao lançar uma habilidade, Alistar pisoteia unidades próximas, causando dano mágico"
+        },
+        "q": {
+          "name": "Pulverizar",
+          "description": "Alistar golpeia o chão, lançando inimigos próximos ao ar e causando dano mágico"
+        },
+        "w": {
+          "name": "Avanço Brutal",
+          "description": "Alistar investe contra um inimigo, causando dano e jogando-o para trás"
+        },
+        "e": {
+          "name": "Rugido Triunfante",
+          "description": "Alistar ruge, curando a si mesmo e aliados próximos"
+        },
+        "r": {
+          "name": "Força Indomável",
+          "description": "Alistar deixa sua fúria tomar conta, reduzindo drasticamente o dano recebido"
+        }
+      },
+      "skins": [
+        {
+          "id": "alistar_0",
+          "name": "Padrão",
+          "imageUrl": "https://example.com/alistar_default.jpg"
+        }
+      ]
+    },
+    "ahri": {
+      "id": "ahri",
+      "name": "Ahri",
+      "title": "A Raposa de Nove Caudas",
+      "roles": ["Mage", "Assassin"],
+      "difficulty": 2,
+      "lore": "Ahri é uma vastaya que pode absorver a essência vital de suas presas e manipular suas emoções. Com a graça natural de suas caudas de raposa e sua verdadeira forma de vastaya, ela brinca com suas presas antes de consumir suas essências vitais.",
+      "abilities": {
+        "passive": {
+          "name": "Roubo de Essência",
+          "description": "Ahri recebe essência ao matar unidades, que pode ser usada para se curar"
+        },
+        "q": {
+          "name": "Orbe da Ilusão",
+          "description": "Ahri lança e puxa de volta seu orbe, causando dano mágico na ida e dano verdadeiro na volta"
+        },
+        "w": {
+          "name": "Fogo de Raposa",
+          "description": "Ahri libera três fogos-fátuos que perseguem e causam dano aos inimigos próximos"
+        },
+        "e": {
+          "name": "Encanto",
+          "description": "Ahri manda um beijo que causa dano e encanta um inimigo, fazendo-o caminhar indefeso em sua direção"
+        },
+        "r": {
+          "name": "Ímpeto Espiritual",
+          "description": "Ahri avança e dispara essências de energia, causando dano aos inimigos próximos. Pode ser usada até três vezes"
+        }
+      },
+      "skins": [
+        {
+          "id": "ahri_0",
+          "name": "Padrão",
+          "imageUrl": "https://example.com/ahri_default.jpg"
+        }
+      ]
+    }
+  }
+}

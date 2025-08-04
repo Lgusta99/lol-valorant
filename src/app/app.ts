@@ -1,6 +1,6 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {Header} from './modules/lol-page/components/header/header';
+import { Header } from './modules/lol-page/components/header/header';
 
 @Component({
   selector: 'app-root',
@@ -8,9 +8,17 @@ import {Header} from './modules/lol-page/components/header/header';
   imports: [RouterOutlet, Header],
   template: `
     <app-header></app-header>
-    <router-outlet></router-outlet>
-  `
+    <div class="main-container">
+      <router-outlet></router-outlet>
+    </div>
+  `,
+  styles: [`
+    .main-container {
+      display: flex;
+      height: calc(100vh - 64px);
+    }
+  `]
 })
 export class App {
-  protected readonly title = signal('lol-music');
+  protected readonly title = 'lol-music';
 }
