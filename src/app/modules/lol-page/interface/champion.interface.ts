@@ -25,4 +25,23 @@ export interface Champion {
   stats: {
     [key: string]: number;
   };
+  spells: Array<{
+    id: string;
+    name: string;
+    description: string;
+    tooltip: string;
+    maxrank: number;
+    cooldown: number[];
+    cost: number[];
+    range: number[];
+    image: {
+      full: string;
+      sprite: string;
+      group: string;
+      x: number;
+      y: number;
+      w: number;
+      h: number;
+    };
+  }>;
 }

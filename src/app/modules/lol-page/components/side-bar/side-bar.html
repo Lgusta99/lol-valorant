@@ -1,16 +1,11 @@
 <aside class="side-bar">
   <div class="side-bar__search">
     <div class="side-bar__search__container">
-      <div class="side-bar__search__container__icon">
-        <svg class="side-bar__search__container__icon__image" fill="currentColor" height="20px" viewBox="0 0 256 256" width="20px" xmlns="http://www.w3.org/2000/svg">
-          <path d="M229.66,218.34l-50.07-50.06a88.11,88.11,0,1,0-11.31,11.31l50.06,50.07a8,8,0,0,0,11.32-11.32ZM40,112a72,72,0,1,1,72,72A72.08,72.08,0,0,1,40,112Z"></path>
-        </svg>
-      </div>
       <input class="side-bar__search__container__input" placeholder="Search champions" type="search" [(ngModel)]="searchText" (input)="filterChampions()"/>
     </div>
   </div>
   <nav class="side-bar__items">
-    <a *ngFor="let champion of filteredChampions" class="side-bar__items__item" [routerLink]="['/champion', champion.id]">
+    <a *ngFor="let champion of filteredChampions" class="side-bar__items__item" (click)="onChampionSelect(champion)">
       <div class="side-bar__items__item__icon" [style.background-image]="'url(' + getChampionImageUrl(champion.image.full) + ')'"></div>
       <span class="side-bar__items__item__label">{{ champion.name }}</span>
     </a>

@@ -28,11 +28,73 @@ main {
   }
 }
 
-.lore__content {
+.lore__content, .abilities__content {
   @apply mt-6;
 
   p {
     @apply leading-relaxed text-[var(--text-secondary)];
+  }
+}
+
+.abilities__content {
+  h3 {
+    @apply text-2xl font-bold text-[var(--text-primary)];
+  }
+
+  .champion-stats {
+    @apply bg-[var(--background-secondary)] rounded-lg p-6;
+    
+    .stats-grid {
+      @apply grid gap-4 mt-4;
+      
+      .stat-item {
+        @apply flex items-center gap-4;
+        
+        .stat-label {
+          @apply w-24 text-sm text-[var(--text-secondary)];
+        }
+        
+        .stat-bar {
+          @apply flex-1 bg-[var(--background-primary)] h-2 rounded-full overflow-hidden;
+          
+          .stat-fill {
+            @apply h-full bg-[var(--primary-accent)];
+          }
+        }
+        
+        .stat-value {
+          @apply w-16 text-right text-sm text-[var(--text-secondary)];
+        }
+      }
+    }
+    
+    .base-stats-grid {
+      @apply grid grid-cols-3 gap-4 mt-4;
+      
+      .base-stat-item {
+        @apply flex flex-col items-center p-4 bg-[var(--background-primary)] rounded-lg;
+        
+        .stat-label {
+          @apply text-sm text-[var(--text-secondary)] mb-1;
+        }
+        
+        .stat-value {
+          @apply text-lg font-semibold text-[var(--text-primary)];
+        }
+      }
+    }
+  }
+
+  .ability {
+    @apply mb-6;
+    
+    h4 {
+      @apply text-xl font-semibold text-[var(--text-primary)] mb-2;
+    }
+
+    p {
+      @apply text-sm text-[var(--text-secondary)];
+    }
   }
 }
 

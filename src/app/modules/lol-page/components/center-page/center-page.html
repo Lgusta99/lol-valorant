@@ -1,32 +1,90 @@
 <main>
-  <div class="content__container">
-    <h2 class="title__home__page">Alistair</h2>
+  <div class="content__container" *ngIf="champion">
+    <h2 class="title__home__page">{{ champion.name }}</h2>
+    <h3 class="champion__title">{{ champion.title }}</h3>
     <div class="tab__navigation">
       <nav>
-        <a class="tab__active" href="#">Lore</a>
-        <a class="tab__link" href="#">Abilities</a>
-        <a class="tab__link" href="#">Theme Music</a>
+        <a [class]="activeTab === 'lore' ? 'tab__active' : 'tab__link'" (click)="setActiveTab('lore')" href="javascript:void(0)">Lore</a>
+        <a [class]="activeTab === 'abilities' ? 'tab__active' : 'tab__link'" (click)="setActiveTab('abilities')" href="javascript:void(0)">Abilities</a>
       </nav>
     </div>
-    <div class="lore__content">
-      <p>
-        Alistair is a mighty minotaur with a fearsome reputation, born in the heart of the Great Barrier. He seeks vengeance against the Noxian empire for the destruction of
-        his clan. Though he was enslaved and forced into the gladiatorial arenas, Alistair's indomitable will allowed him to survive and eventually escape. Now, he roams the
-        land, a symbol of resistance, ready to crush any who stand in his way.
-      </p>
+
+    <!-- Lore Content -->
+    <div class="lore__content" *ngIf="activeTab === 'lore'">
+      <p>{{ champion.blurb }}</p>
+    </div>
+
+    <!-- Abilities Content -->
+    <div class="abilities__content" *ngIf="activeTab === 'abilities'">
+      <!-- Champion Stats -->
+      <div class="champion-stats">
+        <h3>Champion Attributes</h3>
+        <div class="stats-grid">
+          <div class="stat-item">
+            <span class="stat-label">Attack</span>
+            <div class="stat-bar">
+              <div class="stat-fill" [style.width]="(champion.info.attack * 10) + '%'"></div>
+            </div>
+            <span class="stat-value">{{ champion.info.attack }}/10</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Defense</span>
+            <div class="stat-bar">
+              <div class="stat-fill" [style.width]="(champion.info.defense * 10) + '%'"></div>
+            </div>
+            <span class="stat-value">{{ champion.info.defense }}/10</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Magic</span>
+            <div class="stat-bar">
+              <div class="stat-fill" [style.width]="(champion.info.magic * 10) + '%'"></div>
+            </div>
+            <span class="stat-value">{{ champion.info.magic }}/10</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Difficulty</span>
+            <div class="stat-bar">
+              <div class="stat-fill" [style.width]="(champion.info.difficulty * 10) + '%'"></div>
+            </div>
+            <span class="stat-value">{{ champion.info.difficulty }}/10</span>
+          </div>
+        </div>
+
+        <h3 class="mt-6">Base Stats</h3>
+        <div class="base-stats-grid">
+          <div class="base-stat-item">
+            <span class="stat-label">HP</span>
+            <span class="stat-value">{{ champion.stats['hp'] }}</span>
+          </div>
+          <div class="base-stat-item">
+            <span class="stat-label">MP</span>
+            <span class="stat-value">{{ champion.stats['mp'] }}</span>
+          </div>
+          <div class="base-stat-item">
+            <span class="stat-label">Armor</span>
+            <span class="stat-value">{{ champion.stats['armor'] }}</span>
+          </div>
+        </div>
+      </div>
+
+      <h3 class="mt-8 mb-4">Champion Abilities</h3>
+      <div class="ability" *ngFor="let spell of champion.spells; let i = index">
+        <h4>{{ spell.name }}</h4>
+        <p>{{ spell.description }}</p>
+      </div>
     </div>
     <div class="theme__player">
       <div class="theme__container">
-        <div class="theme__image" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDq8g5T4J8bsSGY_C98hM2zVBlb4OOrZHnU8CODjFpCW5TPqatTqExdfSdbkNqBwdaY7B924jSZkDH6EumCbqaeI2Xy-etmBrzawHLTMKKFzUxcEGZzPjPwikHwXOFnUTokGWG5CgU_kegycpn_iEA9jRSgleG8ks6AAWgWjxFauSjtsB-xu6bz4k5NrC8BTyzB1hZwXvKSqwKFsvnkCmsj6iG1xU0OQpYHVm3LgkDawKI2xGLQIKCaLcYI0IJSB6wynSFvv9KS3yUH");'></div>
+        <div class="theme__image" [style.background-image]="'url(' + getChampionImageUrl(champion.image.full) + ')'"></div>
         <div class="theme__info">
-          <p class="theme__title">Alistair Theme</p>
+          <p class="theme__title">{{ champion.name }} Theme</p>
           <p class="theme__subtitle">League of Legends</p>
         </div>
-        <button class="play__button">
+        <!-- <button class="play__button">
           <svg fill="currentColor" height="24px" viewBox="0 0 256 256" width="24px" xmlns="http://www.w3.org/2000/svg">
             <path d="M240,128a15.74,15.74,0,0,1-7.6,13.51L88.32,229.65a16,16,0,0,1-16.2.3A15.86,15.86,0,0,1,64,216.13V39.87a15.86,15.86,0,0,1,8.12-13.82,16,16,0,0,1,16.2.3L232.4,114.49A15.74,15.74,0,0,1,240,128Z"></path>
           </svg>
-        </button>
+        </button> -->
       </div>
     </div>
   </div>

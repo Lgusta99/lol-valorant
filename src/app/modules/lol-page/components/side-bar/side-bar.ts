@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { HttpClient } from '@angular/common/http';
 import { Champion } from '../../interface/champion.interface';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { ChampionResponse } from '../../interface/champion-response.interface';
+import { ChampionService } from '../../services/champion.service';
 
 @Component({
   standalone: true,
   selector: 'app-side-bar',
-  imports: [CommonModule, RouterModule, FormsModule, HttpClientModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './side-bar.html',
   styleUrl: './side-bar.scss'
 })
@@ -19,7 +19,10 @@ export class SideBar implements OnInit {
   searchText: string = '';
   private url = 'https://ddragon.leagueoflegends.com/cdn/15.15.1/data/en_US/champion.json';
 
-  constructor(private http: HttpClient) {}
+  constructor(
+    private http: HttpClient,
+    private championService: ChampionService
+  ) {}
 
   ngOnInit() {
     this.fetchChampions();
@@ -48,6 +51,10 @@ export class SideBar implements OnInit {
     this.filteredChampions = this.championList.filter(champion => 
       champion.name.toLowerCase().includes(searchLower)
     );
+  }
+
+  onChampionSelect(champion: Champion) {
+    this.championService.setSelectedChampion(champion);
   }
 
   getChampionImageUrl(imageName: string): string {
